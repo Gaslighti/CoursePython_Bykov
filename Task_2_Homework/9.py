@@ -34,12 +34,17 @@ def fibonacci(n):
 # Testing the decorator with fibonacci function
 print(fibonacci(30))
 
+
+ASS=64
 @timer_decorator
-def function_2(x):
-    return x**x
+def fact(n):
+    if n == 0:
+        return 1
+    else:
+        return n * fact(n-1)
 
+print(fact(ASS))
 
-print(function_2(21))
 
 
 
