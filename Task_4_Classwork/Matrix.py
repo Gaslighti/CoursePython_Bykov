@@ -22,3 +22,10 @@ def task(*args):
 
 
 print(task('1',2,3.3333,1,10,'pwd','ls - la'))
+
+def task_2(x,y):
+    result=np.random.random((x,y))
+    return result.mean(),result.min(),result.max()
+
+
+print(task_2(5,10))
