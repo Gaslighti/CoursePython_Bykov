@@ -8,7 +8,8 @@ flights = pd.DataFrame({
     'sched_dep_time': [515, 529, 540, 545],
 }).set_index('id')
 
-flights.to_csv('flights.csv', index=False, header=False)
+print(flights)
 
-flights_2 = pd.read_csv('flights.csv')
-print(flights_2)
+print(flights.groupby('month')['month'].count())
+
+print(flights.groupby('month')['dep_time'].sum())

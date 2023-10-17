@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 flights = pd.DataFrame({
     'id': [0, 1, 2, 3],
@@ -8,7 +9,5 @@ flights = pd.DataFrame({
     'sched_dep_time': [515, 529, 540, 545],
 }).set_index('id')
 
-flights.to_csv('flights.csv', index=False, header=False)
-
-flights_2 = pd.read_csv('flights.csv')
-print(flights_2)
+plt.plot(flights.groupby('month')['dep_time'].sum())
+plt.savefig('flights.png')
