@@ -1,4 +1,6 @@
 import pandas as pd
+import matplotlib
+matplotlib.use('agg')
 import matplotlib.pyplot as plt
 
 flights = pd.DataFrame({
@@ -9,5 +11,6 @@ flights = pd.DataFrame({
     'sched_dep_time': [515, 529, 540, 545],
 }).set_index('id')
 
+print(flights)
 plt.plot(flights.groupby('month')['dep_time'].sum())
 plt.savefig('flights.png')
